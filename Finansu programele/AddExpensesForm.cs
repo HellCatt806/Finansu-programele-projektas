@@ -26,7 +26,7 @@ namespace Finansu_programele
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            mainForminstance.AddExpenses(expenseTextBox.Text);
+            mainForminstance.AddExpenses(expenseTextBox.Text, float.Parse(expenseAmounttextBox.Text), expenseTypeOption.SelectedIndex);
             //TODO: update total expenses
             this.Close();
         }

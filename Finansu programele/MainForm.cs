@@ -20,6 +20,8 @@ namespace Finansu_programele
         public MainForm()
         {
             InitializeComponent();
+            Functions functions = new Functions(this);
+            functions.setMonthUI(DateTime.Now.Month);
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -80,10 +82,10 @@ namespace Finansu_programele
         {
 
         }
-        public void AddExpenses(string expenseName)
+        public void AddExpenses(string expenseName, float expensePrice, int expenseType)
         {
             Label label12 = new Label();
-            label12.Text = expenseName;                 // Set the label's text
+            label12.Text = expenseName + " " + expensePrice + "€";                 // Set the label's text
             label12.Location = new System.Drawing.Point(17, 72);
             label12.Size = new System.Drawing.Size(135, 20);
             //label12.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular); // Optional styling
@@ -107,6 +109,15 @@ namespace Finansu_programele
         {
             AddIncomeForm PridetiPajamas = new AddIncomeForm(this);
             PridetiPajamas.ShowDialog();
+        }
+        public void changeMonthNameLabel(string monthName)
+        {
+            monthLabel.Text = monthName;
+        }
+        //Clears all labels in Income/Expenses UI
+        public void clearIncomeExpensePanel()
+        {
+            this.panel1.Controls.Clear();
         }
     }
 }
