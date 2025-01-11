@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Finansu_programele.Properties.Data;
 
 namespace Finansu_programele.Properties
 {
-    internal class data
+    public static class Data
     {
-        struct month
+        public static List<Data.month> months = new List<Data.month>();
+        public struct month
         {
-            string monthName;
+            public string monthName;
 
             //Expenses
             public List<string> expenseName;
@@ -20,6 +22,7 @@ namespace Finansu_programele.Properties
             //Income
             public List<string> incomeName;
             public List<float> incomeAmount;
+
             public month(string monthName)
             {
                 this.monthName = monthName;
@@ -33,7 +36,7 @@ namespace Finansu_programele.Properties
             }
             public void InitializeValues()
             {
-                if (expenseName == null){expenseName = new List<string>();}
+                if (expenseName == null) { expenseName = new List<string>(); }
                 if (expensePrice == null) { expensePrice = new List<float>(); }
                 if (expenseType == null) { expenseType = new List<int>(); }
 
@@ -41,5 +44,7 @@ namespace Finansu_programele.Properties
                 if (incomeAmount == null) { incomeAmount = new List<float>(); }
             }
         }
-    }
+
+
+    } 
 }

@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
-using System.Collections.Generic; // Required for List
+using System.Collections.Generic;
+using Finansu_programele.Properties; // Required for List
 
 
 namespace Finansu_programele
@@ -17,11 +18,16 @@ namespace Finansu_programele
     public partial class MainForm : Form
     {
         public static MainForm instance;
+        private Label expensesTotalLabel;
+        private Label incomeTotalLabel;
         public MainForm()
         {
             InitializeComponent();
+
             Functions functions = new Functions(this);
             functions.setMonthUI(DateTime.Now.Month);
+            InitializeData();
+
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -82,24 +88,55 @@ namespace Finansu_programele
         {
 
         }
-        public void AddExpenses(string expenseName, float expensePrice, int expenseType)
+        public void addExpense(string expenseName, float expensePrice, int expenseIndex)
         {
-            Label label12 = new Label();
-            label12.Text = expenseName + " " + expensePrice + "€";                 // Set the label's text
-            label12.Location = new System.Drawing.Point(17, 72);
-            label12.Size = new System.Drawing.Size(135, 20);
-            //label12.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular); // Optional styling
-            label12.AutoSize = true;
-            label12.TabIndex = 11;
+            Label newExpenseLabel = new Label();
+            newExpenseLabel.Text = expenseName + " " + expensePrice + "€";
+            newExpenseLabel.Location = new System.Drawing.Point(17, (70 + (expenseIndex * 30)));
+            newExpenseLabel.Size = new System.Drawing.Size(135, 20);
+            newExpenseLabel.AutoSize = true;
+            newExpenseLabel.TabIndex = 11;
+            expensePanel.Controls.Add(newExpenseLabel);
+            newExpenseLabel.Name = "expenseLabel" + expenseIndex.ToString();
 
-
-            panel1.Controls.Add(label12); // Add the label to the form's controls
+            expensePanel.PerformLayout();
         }
-        public void EditExpenses(string expenseName, Label labelName)
+        public void addIncome(string incomeName, float incomeAmount, int incomeIndex)
         {
-            labelName.Text = expenseName;
+            Label newIncomeLabel = new Label();
+            newIncomeLabel.Text = incomeName + " " + incomeAmount + "€";
+            newIncomeLabel.Location = new System.Drawing.Point(17, (70 + (incomeIndex * 30)));
+            newIncomeLabel.Size = new System.Drawing.Size(135, 20);
+            newIncomeLabel.AutoSize = true;
+            newIncomeLabel.TabIndex = 11;
+            incomePanel.Controls.Add(newIncomeLabel);
+            newIncomeLabel.Name = "incomeLabel" + incomeIndex.ToString();
+            incomePanel.PerformLayout();
         }
-
+        public void updateExpensesIncomeTotal(int currentMonth)
+        {
+            int expenseCount = Data.months[currentMonth].expensePrice.Count();
+            float expenseTotal = 0;
+            for (int i = 0; i < expenseCount; i++)
+            {
+                expenseTotal += Data.months[currentMonth].expensePrice[i];
+            }
+            if(expenseTotal > 0)
+            {
+                expensesTotalLabel.Text = "Iš viso: " + expenseTotal.ToString() + "€";
+            }
+            
+            int incomeCount = Data.months[currentMonth].incomeAmount.Count();
+            float incomeTotal = 0;
+            for (int a = 0; a < incomeCount; a++)
+            {
+                incomeTotal += Data.months[currentMonth].incomeAmount[a];
+            }
+            if (incomeTotal > 0)
+            {
+                incomeTotalLabel.Text = "Iš viso: " + incomeTotal.ToString() + "€";
+            }
+        }
         private void label1_Click_1(object sender, EventArgs e)
         {
 
@@ -117,7 +154,101 @@ namespace Finansu_programele
         //Clears all labels in Income/Expenses UI
         public void clearIncomeExpensePanel()
         {
-            this.panel1.Controls.Clear();
+            this.expensePanel.Controls.Clear();
+            this.incomePanel.Controls.Clear();
+            this.expenseIncomeTotalPanel.Controls.Clear();
+
+            Label expensesLabel = new Label();
+            expensesLabel.AutoSize = true;
+            expensesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            expensesLabel.Location = new System.Drawing.Point(17, 26);
+            expensesLabel.Name = "expensesLabel";
+            expensesLabel.Size = new System.Drawing.Size(71, 20);
+            expensesLabel.TabIndex = 0;
+            expensesLabel.Text = "Išlaidos";
+            expensePanel.Controls.Add(expensesLabel);
+
+            Label incomeLabel = new Label();
+            incomeLabel.AutoSize = true;
+            incomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            incomeLabel.Location = new System.Drawing.Point(17, 26);
+            incomeLabel.Name = "incomeLabel";
+            incomeLabel.Size = new System.Drawing.Size(77, 20);
+            incomeLabel.TabIndex = 0;
+            incomeLabel.Text = "Pajamos";
+            incomePanel.Controls.Add(incomeLabel);
+
+            expensesTotalLabel = new Label();
+            expensesTotalLabel.AutoSize = true;
+            expensesTotalLabel.Location = new System.Drawing.Point(17, 19);
+            expensesTotalLabel.Name = "expensesTotalLabel";
+            expensesTotalLabel.Size = new System.Drawing.Size(111, 20);
+            expensesTotalLabel.TabIndex = 8;
+            expensesTotalLabel.Text = "Iš viso:";
+            expenseIncomeTotalPanel.Controls.Add(expensesTotalLabel);
+
+            incomeTotalLabel = new Label();
+            incomeTotalLabel.AutoSize = true;
+            incomeTotalLabel.Location = new System.Drawing.Point(275, 19);
+            incomeTotalLabel.Name = "incomeTotalLabel";
+            incomeTotalLabel.Size = new System.Drawing.Size(111, 20);
+            incomeTotalLabel.TabIndex = 8;
+            incomeTotalLabel.Text = "Iš viso:";
+            expenseIncomeTotalPanel.Controls.Add(incomeTotalLabel);
+        }
+
+        private void InitializeData()
+        {
+            //Creates month struct
+            Data.month january = new Data.month("Sausis");
+            Data.month february = new Data.month("Vasaris");
+            Data.month march = new Data.month("Kovas");
+            Data.month april = new Data.month("Balandis");
+            Data.month may = new Data.month("Gegužė");
+            Data.month june = new Data.month("Birželis");
+            Data.month july = new Data.month("Liepa");
+            Data.month august = new Data.month("Rugpjūtis");
+            Data.month september = new Data.month("Rugsėjis");
+            Data.month october = new Data.month("Spalis");
+            Data.month november = new Data.month("Lapkritis");
+            Data.month december = new Data.month("Gruodis");
+
+            //Initializes month struct
+            january.InitializeValues();
+            february.InitializeValues();
+            march.InitializeValues();
+            april.InitializeValues();
+            may.InitializeValues();
+            june.InitializeValues();
+            july.InitializeValues();
+            august.InitializeValues();
+            september.InitializeValues();
+            october.InitializeValues();
+            november.InitializeValues();
+            december.InitializeValues();
+
+            //Adds month struct to list of months
+            Data.months.Add(january);
+            Data.months.Add(february);
+            Data.months.Add(march);
+            Data.months.Add(april);
+            Data.months.Add(may);
+            Data.months.Add(june);
+            Data.months.Add(july);
+            Data.months.Add(august);
+            Data.months.Add(september);
+            Data.months.Add(october);
+            Data.months.Add(november);
+            Data.months.Add(december);
+        }
+        public int getMonthUIId()
+        {
+            return Functions.getMonthIdByName(this.monthLabel.Text);
+        }
+
+        private void incomeTotalLabelDefault_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

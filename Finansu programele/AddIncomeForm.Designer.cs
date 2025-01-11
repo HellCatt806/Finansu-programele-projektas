@@ -33,8 +33,8 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.expenseTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.incomeNameTextBox = new System.Windows.Forms.TextBox();
+            this.incomeAmountTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -88,20 +88,20 @@
             this.label2.Text = "Pajamų pavadinimas";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // expenseTextBox
+            // incomeNameTextBox
             // 
-            this.expenseTextBox.Location = new System.Drawing.Point(346, 92);
-            this.expenseTextBox.Name = "expenseTextBox";
-            this.expenseTextBox.Size = new System.Drawing.Size(161, 26);
-            this.expenseTextBox.TabIndex = 7;
-            this.expenseTextBox.TextChanged += new System.EventHandler(this.expenseTextBox_TextChanged);
+            this.incomeNameTextBox.Location = new System.Drawing.Point(346, 92);
+            this.incomeNameTextBox.Name = "incomeNameTextBox";
+            this.incomeNameTextBox.Size = new System.Drawing.Size(161, 26);
+            this.incomeNameTextBox.TabIndex = 7;
+            this.incomeNameTextBox.TextChanged += new System.EventHandler(this.expenseTextBox_TextChanged);
             // 
-            // textBox1
+            // incomeAmountTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(346, 160);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 26);
-            this.textBox1.TabIndex = 13;
+            this.incomeAmountTextBox.Location = new System.Drawing.Point(346, 160);
+            this.incomeAmountTextBox.Name = "incomeAmountTextBox";
+            this.incomeAmountTextBox.Size = new System.Drawing.Size(161, 26);
+            this.incomeAmountTextBox.TabIndex = 13;
             // 
             // AddIncomeForm
             // 
@@ -110,12 +110,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(567, 287);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.incomeAmountTextBox);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.expenseTextBox);
+            this.Controls.Add(this.incomeNameTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AddIncomeForm";
@@ -134,7 +134,7 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox expenseTextBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox incomeNameTextBox;
+        private System.Windows.Forms.TextBox incomeAmountTextBox;
     }
 }

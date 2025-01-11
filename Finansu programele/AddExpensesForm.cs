@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Finansu_programele.Properties;
 
 namespace Finansu_programele
 {
@@ -26,8 +27,17 @@ namespace Finansu_programele
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            mainForminstance.AddExpenses(expenseTextBox.Text, float.Parse(expenseAmounttextBox.Text), expenseTypeOption.SelectedIndex);
-            //TODO: update total expenses
+            int currentMonth = mainForminstance.getMonthUIId();
+            Data.months[currentMonth].expenseName.Add(expenseTextBox.Text);
+            Data.months[currentMonth].expensePrice.Add(float.Parse(expenseAmounttextBox.Text));
+            Data.months[currentMonth].expenseType.Add(Functions.getExpensesTypeIdByText(expenseTypeOption.Text));
+
+            int lastIndex = Data.months[currentMonth].expenseName.Count - 1;
+            string expenseName = Data.months[currentMonth].expenseName[lastIndex];
+            float expensePrice = Data.months[currentMonth].expensePrice[lastIndex];
+
+            mainForminstance.addExpense(expenseName, expensePrice, lastIndex);
+            mainForminstance.updateExpensesIncomeTotal(currentMonth);
             this.Close();
         }
 

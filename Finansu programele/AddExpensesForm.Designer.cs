@@ -91,6 +91,7 @@
             this.expenseTypeOption.Name = "expenseTypeOption";
             this.expenseTypeOption.Size = new System.Drawing.Size(161, 28);
             this.expenseTypeOption.TabIndex = 4;
+            this.expenseTypeOption.SelectedIndex = 7;
             // 
             // cancelButton
             // 
