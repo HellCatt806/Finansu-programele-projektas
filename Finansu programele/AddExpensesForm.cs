@@ -27,7 +27,7 @@ namespace Finansu_programele
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            int currentMonth = mainForminstance.getMonthUIId();
+            int currentMonth = mainForminstance.getMonthLabelId();
             Data.months[currentMonth].expenseName.Add(expenseTextBox.Text);
             Data.months[currentMonth].expensePrice.Add(float.Parse(expenseAmounttextBox.Text));
             Data.months[currentMonth].expenseType.Add(Functions.getExpensesTypeIdByText(expenseTypeOption.Text));

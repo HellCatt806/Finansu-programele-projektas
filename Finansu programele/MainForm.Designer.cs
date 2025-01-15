@@ -58,6 +58,7 @@ namespace Finansu_programele
             this.incomeLabelDefault = new System.Windows.Forms.Label();
             this.incomeTotalLabelDefault = new System.Windows.Forms.Label();
             this.expenseIncomeTotalPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             saveDataButton = new System.Windows.Forms.ToolStripMenuItem();
             loadDataButton = new System.Windows.Forms.ToolStripMenuItem();
             closeProgramButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,7 +129,7 @@ namespace Finansu_programele
             this.addExpensesButton.BackColor = System.Drawing.Color.Peru;
             this.addExpensesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addExpensesButton.ForeColor = System.Drawing.Color.Black;
-            this.addExpensesButton.Location = new System.Drawing.Point(80, 474);
+            this.addExpensesButton.Location = new System.Drawing.Point(131, 474);
             this.addExpensesButton.Name = "addExpensesButton";
             this.addExpensesButton.Size = new System.Drawing.Size(133, 39);
             this.addExpensesButton.TabIndex = 4;
@@ -140,7 +141,7 @@ namespace Finansu_programele
             // 
             this.addIncomeButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.addIncomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addIncomeButton.Location = new System.Drawing.Point(234, 474);
+            this.addIncomeButton.Location = new System.Drawing.Point(278, 474);
             this.addIncomeButton.Name = "addIncomeButton";
             this.addIncomeButton.Size = new System.Drawing.Size(144, 39);
             this.addIncomeButton.TabIndex = 5;
@@ -151,7 +152,7 @@ namespace Finansu_programele
             // moreDiagramsButton
             // 
             this.moreDiagramsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moreDiagramsButton.Location = new System.Drawing.Point(808, 474);
+            this.moreDiagramsButton.Location = new System.Drawing.Point(833, 474);
             this.moreDiagramsButton.Name = "moreDiagramsButton";
             this.moreDiagramsButton.Size = new System.Drawing.Size(171, 39);
             this.moreDiagramsButton.TabIndex = 6;
@@ -251,7 +252,7 @@ namespace Finansu_programele
             // previousMonthButton
             // 
             this.previousMonthButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.previousMonthButton.Location = new System.Drawing.Point(416, 474);
+            this.previousMonthButton.Location = new System.Drawing.Point(441, 474);
             this.previousMonthButton.Name = "previousMonthButton";
             this.previousMonthButton.Size = new System.Drawing.Size(178, 39);
             this.previousMonthButton.TabIndex = 11;
@@ -262,7 +263,7 @@ namespace Finansu_programele
             // nextMonthButton
             // 
             this.nextMonthButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextMonthButton.Location = new System.Drawing.Point(611, 474);
+            this.nextMonthButton.Location = new System.Drawing.Point(636, 474);
             this.nextMonthButton.Name = "nextMonthButton";
             this.nextMonthButton.Size = new System.Drawing.Size(178, 39);
             this.nextMonthButton.TabIndex = 12;
@@ -338,10 +339,22 @@ namespace Finansu_programele
             this.expenseIncomeTotalPanel.Size = new System.Drawing.Size(513, 55);
             this.expenseIncomeTotalPanel.TabIndex = 15;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 463);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 50);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Keisti sarašą";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1022, 525);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.expenseIncomeTotalPanel);
             this.Controls.Add(this.incomePanel);
             this.Controls.Add(this.nextMonthButton);
@@ -400,6 +413,7 @@ namespace Finansu_programele
         private Label incomeTotalLabelDefault;
         private Label incomeLabelDefault;
         private Panel expenseIncomeTotalPanel;
+        private Button button1;
     }
 }
 

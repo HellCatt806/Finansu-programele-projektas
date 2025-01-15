@@ -52,7 +52,7 @@ namespace Finansu_programele
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            int currentMonth = mainform.getMonthUIId();
+            int currentMonth = mainform.getMonthLabelId();
             Data.months[currentMonth].incomeName.Add(incomeNameTextBox.Text);
             Data.months[currentMonth].incomeAmount.Add(float.Parse(incomeAmountTextBox.Text));
 

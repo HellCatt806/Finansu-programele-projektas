@@ -267,9 +267,9 @@ namespace Finansu_programele
             Data.months.Add(november);
             Data.months.Add(december);
         }
-        public int getMonthUIId()
+        public int getMonthLabelId()
         {
-            return Functions.getMonthIdByName(this.monthLabel.Text);
+            return Functions.getMonthIdByName(monthLabel.Text);
         }
 
         private void incomeTotalLabelDefault_Click(object sender, EventArgs e)
@@ -293,6 +293,12 @@ namespace Finansu_programele
         }
         public void enableCartesianChart1(){
             cartesianChart1.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DeleteForm deleteForm = new DeleteForm(this);
+            deleteForm.ShowDialog();
         }
     }
 }
