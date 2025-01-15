@@ -18,20 +18,19 @@ namespace Finansu_programele
     public partial class MainForm : Form
     {
         public static MainForm instance;
+        private Functions funkcijos;
+
         private Label expensesTotalLabel;
         private Label incomeTotalLabel;
         public MainForm()
         {
             InitializeComponent();
-
-            Functions functions = new Functions(this);
-            functions.setMonthUI(DateTime.Now.Month);
-            InitializeData();
-
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            funkcijos = new Functions(this);
+            funkcijos.setMonthUIOnStart((DateTime.Now.Month) - 1);
+            InitializeData();
         }
 
         private void closeProgramButton_Click(object sender, EventArgs e)
@@ -66,17 +65,44 @@ namespace Finansu_programele
 
         private void previousMonthButton_Click(object sender, EventArgs e)
         {
-            //TODO: praeitas menesis mygtukas
+            //TODO: 
+            int month = Functions.getMonthIdByName(monthLabel.Text) - 1;
+            if (month >= 0)
+            {
+                funkcijos.changeMonth(month);
+            }
+            if((month - 1) < 0)
+            {
+                previousMonthButton.Enabled = false;
+            }
+            if(month < 11)
+            {
+                nextMonthButton.Enabled = true;
+            }
         }
 
         private void nextMonthButton_Click(object sender, EventArgs e)
         {
             //TODO: sekantis menesis mygtukas
+            int month = Functions.getMonthIdByName(monthLabel.Text) + 1;
+            if(month <= 11)
+            {
+                funkcijos.changeMonth(month);
+            }
+            if ((month + 1) > 11)
+            {
+                nextMonthButton.Enabled = false;
+            }
+            if(month > 0)
+            {
+                previousMonthButton.Enabled = true;
+            }
         }
 
         private void moreDiagramsButton_Click(object sender, EventArgs e)
         {
-            //TODO: daugiau diagramu mygtukass
+            MoreCharts moreCharts = new MoreCharts(this);
+            moreCharts.ShowDialog();
         }
 
         private void addExpensesButton_Click(object sender, EventArgs e)
@@ -249,6 +275,24 @@ namespace Finansu_programele
         private void incomeTotalLabelDefault_Click(object sender, EventArgs e)
         {
 
+        }
+        public void disablePreviousMonthButton(){
+            previousMonthButton.Enabled = false;
+        }
+        public void enablePreviousMonthButton() { 
+            previousMonthButton.Enabled=true;
+        }
+        public void disableNextMonthButton() {
+            nextMonthButton.Enabled=false;
+        }
+        public void enableNextMonthButton() {
+            nextMonthButton.Enabled = true;
+        }
+        public void disableCartesianChart1(){
+            cartesianChart1.Visible = false;
+        }
+        public void enableCartesianChart1(){
+            cartesianChart1.Visible = true;
         }
     }
 }

@@ -34,6 +34,7 @@ namespace Finansu_programele.Properties
                 incomeName = null;
                 incomeAmount = null;
             }
+            //Butina paleisti sita funkcija, kad veiktu struct
             public void InitializeValues()
             {
                 if (expenseName == null) { expenseName = new List<string>(); }

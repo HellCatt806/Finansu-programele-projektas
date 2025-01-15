@@ -355,6 +355,7 @@ namespace Finansu_programele
             this.Controls.Add(this.addExpensesButton);
             this.Controls.Add(this.monthLabel);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

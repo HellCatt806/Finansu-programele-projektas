@@ -38,6 +38,7 @@ namespace Finansu_programele
 
             mainForminstance.addExpense(expenseName, expensePrice, lastIndex);
             mainForminstance.updateExpensesIncomeTotal(currentMonth);
+            mainForminstance.enableCartesianChart1();
             this.Close();
         }
 
@@ -47,6 +48,16 @@ namespace Finansu_programele
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddExpensesForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void expenseTypeOption_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

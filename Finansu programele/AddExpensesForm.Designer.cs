@@ -91,6 +91,7 @@
             this.expenseTypeOption.Name = "expenseTypeOption";
             this.expenseTypeOption.Size = new System.Drawing.Size(161, 28);
             this.expenseTypeOption.TabIndex = 4;
+            this.expenseTypeOption.SelectedIndexChanged += new System.EventHandler(this.expenseTypeOption_SelectedIndexChanged);
             this.expenseTypeOption.SelectedIndex = 7;
             // 
             // cancelButton
@@ -151,6 +152,7 @@
             this.Name = "AddExpensesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pridėti Išlaidas";
+            this.Load += new System.EventHandler(this.AddExpensesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

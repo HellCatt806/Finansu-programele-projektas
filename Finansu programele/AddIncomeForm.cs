@@ -13,11 +13,11 @@ namespace Finansu_programele
 {
     public partial class AddIncomeForm : Form
     {
-        private MainForm mainForminstance;
+        private MainForm mainform;
         public AddIncomeForm(MainForm form)
         {
             InitializeComponent();
-            mainForminstance = form;
+            mainform = form;
         }
 
         private void AddIncomeForm_Load(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace Finansu_programele
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            int currentMonth = mainForminstance.getMonthUIId();
+            int currentMonth = mainform.getMonthUIId();
             Data.months[currentMonth].incomeName.Add(incomeNameTextBox.Text);
             Data.months[currentMonth].incomeAmount.Add(float.Parse(incomeAmountTextBox.Text));
 
@@ -60,8 +60,9 @@ namespace Finansu_programele
             string incomeName = Data.months[currentMonth].incomeName[lastIndex];
             float incomeAmount = Data.months[currentMonth].incomeAmount[lastIndex];
 
-            mainForminstance.addIncome(incomeName, incomeAmount, lastIndex);
-            mainForminstance.updateExpensesIncomeTotal(currentMonth);
+            mainform.addIncome(incomeName, incomeAmount, lastIndex);
+            mainform.updateExpensesIncomeTotal(currentMonth);
+            mainform.enableCartesianChart1();
             this.Close();
         }
     }
