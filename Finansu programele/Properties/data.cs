@@ -47,5 +47,10 @@ namespace Finansu_programele.Properties
         }
 
 
-    } 
+    }
+    public class DataItem
+    {
+        public string Label { get; set; }
+        public double Value { get; set; }
+    }
 }

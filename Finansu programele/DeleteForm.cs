@@ -92,6 +92,7 @@ namespace Finansu_programele
             {
                 mainForm.disableCartesianChart1();
             }
+            mainForm.PopulatePieChart();
             this.Close();
         }
 

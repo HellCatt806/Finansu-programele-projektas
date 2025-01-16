@@ -46,7 +46,6 @@ namespace Finansu_programele
             this.label2 = new System.Windows.Forms.Label();
             this.expensesLabel = new System.Windows.Forms.Label();
             this.expensesTotalLabelDefault = new System.Windows.Forms.Label();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.tipsLabel = new System.Windows.Forms.Label();
             this.tipstextBox = new System.Windows.Forms.TextBox();
             this.previousMonthButton = new System.Windows.Forms.Button();
@@ -59,6 +58,7 @@ namespace Finansu_programele
             this.incomeTotalLabelDefault = new System.Windows.Forms.Label();
             this.expenseIncomeTotalPanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.cartesianChart1 = new LiveCharts.WinForms.PieChart();
             saveDataButton = new System.Windows.Forms.ToolStripMenuItem();
             loadDataButton = new System.Windows.Forms.ToolStripMenuItem();
             closeProgramButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -219,14 +219,6 @@ namespace Finansu_programele
             this.expensesTotalLabelDefault.TabIndex = 8;
             this.expensesTotalLabelDefault.Text = "Iš viso: 300eur";
             // 
-            // cartesianChart1
-            // 
-            this.cartesianChart1.Location = new System.Drawing.Point(674, 56);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(324, 204);
-            this.cartesianChart1.TabIndex = 8;
-            this.cartesianChart1.Text = "cartesianChart1";
-            // 
             // tipsLabel
             // 
             this.tipsLabel.AutoSize = true;
@@ -350,10 +342,19 @@ namespace Finansu_programele
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(636, 12);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(342, 269);
+            this.cartesianChart1.TabIndex = 17;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
             // MainForm
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1022, 525);
+            this.Controls.Add(this.cartesianChart1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.expenseIncomeTotalPanel);
             this.Controls.Add(this.incomePanel);
@@ -361,7 +362,6 @@ namespace Finansu_programele
             this.Controls.Add(this.previousMonthButton);
             this.Controls.Add(this.tipstextBox);
             this.Controls.Add(this.tipsLabel);
-            this.Controls.Add(this.cartesianChart1);
             this.Controls.Add(this.expensePanel);
             this.Controls.Add(this.moreDiagramsButton);
             this.Controls.Add(this.addIncomeButton);
@@ -398,7 +398,6 @@ namespace Finansu_programele
         private System.Windows.Forms.Panel expensePanel;
         private System.Windows.Forms.Label expensesLabel;
         private System.Windows.Forms.Label expensesTotalLabelDefault;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.Label tipsLabel;
         private System.Windows.Forms.TextBox tipstextBox;
         private Button previousMonthButton;
@@ -414,6 +413,7 @@ namespace Finansu_programele
         private Label incomeLabelDefault;
         private Panel expenseIncomeTotalPanel;
         private Button button1;
+        private LiveCharts.WinForms.PieChart cartesianChart1;
     }
 }
 

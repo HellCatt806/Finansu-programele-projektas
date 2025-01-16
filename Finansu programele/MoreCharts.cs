@@ -28,5 +28,6 @@ namespace Finansu_programele
         {
             this.Close();
         }
+
     }
 }

@@ -39,6 +39,7 @@ namespace Finansu_programele
             mainForminstance.addExpense(expenseName, expensePrice, lastIndex);
             mainForminstance.updateExpensesIncomeTotal(currentMonth);
             mainForminstance.enableCartesianChart1();
+            mainForminstance.PopulatePieChart();
             this.Close();
         }
 

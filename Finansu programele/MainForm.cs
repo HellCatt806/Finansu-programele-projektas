@@ -9,8 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
-using System.Collections.Generic;
-using Finansu_programele.Properties; // Required for List
+using System.Collections.Generic;   // Required for List
+using Finansu_programele.Properties;
+
+using LiveCharts;
+using LiveCharts.WinForms;
+using LiveCharts.Wpf;
+using System.Windows.Documents;
+using System.Data.OleDb;
 
 
 namespace Finansu_programele
@@ -103,6 +109,7 @@ namespace Finansu_programele
         {
             MoreCharts moreCharts = new MoreCharts(this);
             moreCharts.ShowDialog();
+            
         }
 
         private void addExpensesButton_Click(object sender, EventArgs e)
@@ -299,6 +306,49 @@ namespace Finansu_programele
         {
             DeleteForm deleteForm = new DeleteForm(this);
             deleteForm.ShowDialog();
+        }
+        public void PopulatePieChart()
+        {
+            int currentMonth = getMonthLabelId();
+            int expenseCount = Data.months[currentMonth].expenseName.Count();
+
+            List<int> usedTypes = new List<int>();
+            List<float> expenseSum = new List<float> { 0, 0, 0, 0, 0, 0, 0, 0 };
+
+            for (int i = 0; i < expenseCount; i++){
+                if (Data.months[currentMonth].expenseType[i] >= 0){
+                    usedTypes.Add(Data.months[currentMonth].expenseType[i]);
+                }
+            }
+            usedTypes = usedTypes.Distinct().ToList();
+            for (int a = 0; a < expenseCount; a++){
+                expenseSum[Data.months[currentMonth].expenseType[a]] += Data.months[currentMonth].expensePrice[a];
+            }
+
+            var pieChartData = new List<DataItem>();
+            for (int b = 0; b < usedTypes.Count(); b++){
+                pieChartData.Add(new DataItem { Label = Functions.getExpensesTypeTextByID(usedTypes[b]), Value = expenseSum[usedTypes[b]] });
+            }
+
+            // Create the series collection
+            var seriesCollection = new SeriesCollection();
+
+            foreach (var item in pieChartData)
+            {
+                seriesCollection.Add(new PieSeries
+                {
+                    Title = item.Label,
+                    Values = new ChartValues<double> { item.Value },
+                    DataLabels = true,
+                    LabelPoint = chartPoint => $"{chartPoint.Y:0.##}€" // Format to 2 decimal places
+                });
+            }
+
+            // Assign the series collection to the chart
+            cartesianChart1.Series = seriesCollection;
+
+            // Optionally, set the legend position
+            cartesianChart1.LegendLocation = LegendLocation.Right;
         }
     }
 }

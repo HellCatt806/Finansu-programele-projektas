@@ -113,6 +113,31 @@ public class Functions
 
         }
     }
+    public static string getExpensesTypeTextByID(int expenseType)
+    {
+        switch (expenseType)
+        {
+            case 0:
+                return "Maistas";
+            case 1:
+                return "Transportas";
+            case 2:
+                return "Taupymas";
+            case 3:
+                return "Skolos";
+            case 4:
+                return "Mokesčiai";
+            case 5:
+                return "Buitinės išlaidos";
+            case 6:
+                return "Švietimas (mokslai)";
+            case 7:
+                return "Kita";
+            default:
+                return "Klaida!";
+
+        }
+    }
     public void changeMonth(int monthNumber)
     {
         string monthName = getMonthNameLt(monthNumber);
