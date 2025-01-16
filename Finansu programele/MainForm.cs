@@ -17,6 +17,7 @@ using LiveCharts.WinForms;
 using LiveCharts.Wpf;
 using System.Windows.Documents;
 using System.Data.OleDb;
+using System.Globalization;
 
 
 namespace Finansu_programele
@@ -123,8 +124,11 @@ namespace Finansu_programele
         }
         public void addExpense(string expenseName, float expensePrice, int expenseIndex)
         {
+
+            string expensePriceFormatted = expensePrice.ToString("0.00", CultureInfo.InvariantCulture);
+            expensePriceFormatted = expensePriceFormatted.Replace('.', ',');
             Label newExpenseLabel = new Label();
-            newExpenseLabel.Text = expenseName + " " + expensePrice + "€";
+            newExpenseLabel.Text = expenseName + " " + expensePriceFormatted + "€";
             newExpenseLabel.Location = new System.Drawing.Point(17, (70 + (expenseIndex * 30)));
             newExpenseLabel.Size = new System.Drawing.Size(135, 20);
             newExpenseLabel.AutoSize = true;

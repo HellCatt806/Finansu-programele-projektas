@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +29,11 @@ namespace Finansu_programele
         private void okButton_Click(object sender, EventArgs e)
         {
             int currentMonth = mainForminstance.getMonthLabelId();
+
+            string normalizedInput = expenseAmounttextBox.Text.Replace(',', '.');
+
             Data.months[currentMonth].expenseName.Add(expenseTextBox.Text);
-            Data.months[currentMonth].expensePrice.Add(float.Parse(expenseAmounttextBox.Text));
+            Data.months[currentMonth].expensePrice.Add(float.Parse(normalizedInput, CultureInfo.InvariantCulture));
             Data.months[currentMonth].expenseType.Add(Functions.getExpensesTypeIdByText(expenseTypeOption.Text));
 
             int lastIndex = Data.months[currentMonth].expenseName.Count - 1;
