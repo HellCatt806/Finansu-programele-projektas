@@ -1,0 +1,48 @@
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.csproj.AssemblyReference.cache
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.AddIncomeForm.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.DeleteForm.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.MainForm.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.AddExpensesForm.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.MoreCharts.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.Properties.Resources.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.csproj.GenerateResource.cache
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.csproj.CoreCompileInputs.cache
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\Finansu programele.exe.config
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\Finansu programele.exe
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\Finansu programele.pdb
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.dll
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.pdb
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.xml
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu .09E4B9B3.Up2Date
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.exe
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.pdb
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\Finansu programele.exe.config
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\Finansu programele.exe
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\Finansu programele.pdb
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.dll
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.pdb
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.xml
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.csproj.AssemblyReference.cache
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.AddIncomeForm.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.DeleteForm.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.MainForm.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.AddExpensesForm.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.MoreCharts.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu_programele.Properties.Resources.resources
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.csproj.GenerateResource.cache
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.csproj.CoreCompileInputs.cache
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu .09E4B9B3.Up2Date
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.exe
+C:\Users\mariu\Desktop\Finansu-programele-projektas-master\Finansu-programele-projektas-master\Finansu programele\obj\Debug\Finansu programele.pdb
